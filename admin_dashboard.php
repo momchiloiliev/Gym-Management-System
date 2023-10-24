@@ -107,7 +107,7 @@ if(!isset($_SESSION['admin_id'])){
 
                             <form action="delete_member.php" method="POST">
                                 <input type="hidden" name="member_id" value="<?php echo $result['member_id']; ?>">
-                                <button type="submit">DELETE</button>
+                                <button class="btn btn-danger" type="submit">DELETE</button>
                             </form>                        
                             </td>
                         
@@ -152,10 +152,18 @@ if(!isset($_SESSION['admin_id'])){
                         <td><?php echo $result['email']; ?></td>
                         <td><?php echo $result['phone_number']; ?></td>
                         <td><?php echo date("F, jS Y", strtotime($result['created_at']));?></td>
+                        <td>
+                            <form action="delete_trainer.php" method="POST">
+                                <input type="hidden" name="trainer_id" value="<?php echo $result['trainer_id']; ?>">
+                                <button class="btn btn-danger" type="submit">DELETE</button>
+                            </form>                        
+                        </td>
 
                     </tr>
 
                 <?php endforeach; ?>
+                
+
                 
                 </tbody>
                 </table>
